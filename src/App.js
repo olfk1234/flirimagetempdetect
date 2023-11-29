@@ -1,24 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import {Form} from './Form.js';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Explanation } from './Explanation.js';
+import { HowToUse } from './HowToUse.js';
 
+// export default function App() {
+//   return (
+//     <BrowserRouter>
+//       <Routes>
+//         <Route path="/" element={<Form />}>
+//         </Route>
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// }
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Form />}/>
+      <Route path="/explanation" element={<Explanation />}/>
+      <Route path="/howtouse" element={<HowToUse />}/>
+    </Routes>
   );
 }
 
